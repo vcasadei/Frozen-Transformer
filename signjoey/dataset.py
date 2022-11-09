@@ -5,7 +5,7 @@ Data module
 from torchtext import data
 from torchtext.data import Field, RawField
 from typing import List, Tuple
-import pickle
+import pickle5 as pickle
 import gzip
 import torch
 

@@ -1,0 +1,7 @@
+tensorboard==2.2.0
+tensorflow==2.2.0
+tensorflow-estimator==2.2.0
+termcolor==1.1.0
+torch==1.7.0
+torchtext==0.8.0
+torchvision==0.8.1

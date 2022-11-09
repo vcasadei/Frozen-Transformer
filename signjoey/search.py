@@ -352,13 +352,13 @@ def beam_search(
             topk_log_probs = topk_scores.clone()
 
         # reconstruct beam origin and true word ids from flattened order
-        topk_beam_index = topk_ids.div(decoder.output_size)
+        topk_beam_index = topk_ids.floor_divide(decoder.output_size)
         topk_ids = topk_ids.fmod(decoder.output_size)
 
         # map beam_index to batch_index in the flat representation
         batch_index = topk_beam_index + beam_offset[
-                                        : topk_beam_index.size(0)
-                                        ].unsqueeze(1)
+            : topk_beam_index.size(0)
+        ].unsqueeze(1)
         select_indices = batch_index.view(-1)
 
         # append latest prediction
